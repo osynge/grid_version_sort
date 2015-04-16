@@ -1,4 +1,8 @@
 grid-virt-sort
 ==============
 
-Sadly the SVN repository was down so I imported the code here
+This is depricated as 
+
+    sort --version-sort
+
+Does almost exactly the same thing.
