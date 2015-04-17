@@ -1,4 +1,5 @@
 from sys import version_info
+from grid_virt_sort_release.__version__ import version
 
 try:
     from setuptools import setup, find_packages
@@ -17,12 +18,13 @@ except ImportError:
     pass
 
 setup(name='org-desy-grid-virt-sort-release',
-    version='0.0.3',
+    version=version,
     description="Sorts tags and similar so we always get the newest version",
     author="O M Synge",
     author_email="owen.Synge@desy.de",
     url="www-it.desy.de",
     scripts = ["org_desy_grid_virt_sort_release.py"],
+    packages = ['grid_virt_sort_release'],
     tests_require=[
         'coverage >= 3.0',
         'nose >= 1.1.0',
