@@ -90,9 +90,24 @@ def reverse_numeric(x, y):
     return split_numeric_sort( y,x)
 
 
+class Version:
+    def __init__(self, value):
+        self.value = value
+
+    def __eq__(self, other):
+        return self.value == other.value
+
+    def __lt__(self, other):
+        return split_numeric_sort(self.value, other.value) > 0
+
+    def __gt__(self, other):
+        return split_numeric_sort(self.value, other.value) < 0
+
+
 def main():
     lines = []
     for rawline in sys.stdin:
-        lines.append(rawline.strip())
-    for line in sorted(lines, cmp=reverse_numeric):
-        print line
+        lines.append(Version(rawline.strip()))
+    lines.sort()
+    for line in lines:
+        print(line.value)
